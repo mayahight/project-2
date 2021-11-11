@@ -1,17 +1,22 @@
 {
   "manifest_version": 2,
-  "name": "PROJECT NAME",
-  "description": "PROJECT DESCRIPTION",
-  "version": "0.1",
+  "name": "slow your scroll",
+  "description": "it's extending the browser",
+  "version": "1.0",
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
-        "*://*/*"
+        "*://*/*",
+        "file://*"
       ],
       "js": [
-        "content.js"
+        "browser-extension.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "icons": {
+    "128": "images/icon.png"
+  }
 }
